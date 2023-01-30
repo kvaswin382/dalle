@@ -5,7 +5,7 @@ from requests.structures import CaseInsensitiveDict
 
 
 app = Flask(__name__)
-
+QUERY_URL = "https://api.openai.com/v1/images/generations"
 def generate_image(prompt, model, api_key):
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
@@ -38,7 +38,7 @@ def generate_image(prompt, model, api_key):
     return response_text['data'][0]['url']
 
 
-@app.route('/')
+@app.route('/',methods = ['GET'])
 def dalle():
     prompt = ulib.unquote(request.args.get('prompt',1))
     api_key = request.args.get('api_key',1)
