@@ -1,0 +1,11 @@
+{
+    "name": "DALLE",
+    "description": "Image to text",
+    "repository": "https:github.com/kvaswin382/mp3",
+    "keywords": ["Insta ", "Python", "telegram bot"],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
